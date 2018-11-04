@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom';
-import HandyMan from './HandyMan'
-import TestComponent from './TestComponent'
+import HandyMan from './HandyMan';
+import TestComponent from './TestComponent';
+import RegistrationForm from './RegistrationForm';
 
 const App = () => {
   return ( 
@@ -17,12 +18,16 @@ const App = () => {
         <li>
           <Link to="/topics">Topics</Link>
         </li>
+        <li>
+          <Link to="/RegistrationForm">RegistrationForm</Link>
+        </li> 
       </ul>
 
       <hr />
 
       <Route exact path="/" component={HandyMan} />
       <Route path="/about"  component={TestComponent}/>
+      <Route path="/RegistrationForm"  component={RegistrationForm}/>
       
     </div>
   </Router>
