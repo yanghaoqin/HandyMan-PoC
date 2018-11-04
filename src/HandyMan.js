@@ -1,12 +1,4 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-
-class HandyMan extends Component {
-    render() { 
-        return (
-            <div>
-                HandyMannnn
-=======
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -55,7 +47,6 @@ export class HandyMan extends Component {
                         </Typography>
                     </CardActions>
                 </Card>
->>>>>>> f9477dd16d9bde1b1576a4c2b074aab14e265da7
             </div>
         )
     }
