@@ -99,7 +99,7 @@ class PrimarySearchAppBar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            type: "customer",
+            type: "handyman",
             anchorEl: null,
             mobileMoreAnchorEl: null,
         };
@@ -199,7 +199,7 @@ class PrimarySearchAppBar extends React.Component {
                         </Typography>
                         <Typography className={classes.title} variant="h6" color="inherit" noWrap>
                             <Link to="/registration" style={linkStyle}>
-                                Register
+                                Registration Page
                             </Link>
                         </Typography>
                         <div className={classes.grow} />

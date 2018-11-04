@@ -26,11 +26,16 @@ class SubmitButton extends Component {
 
     switchStateToCompleted() {
         setTimeout(
-            function(){
-            this.refreshPage()
-            }.bind(this), 1000
-        )
+            function() {
+                this._refreshPage()
+            }.bind(this), 600)
         this.setState({ type: "Successful" })
+        
+    }
+
+    _refreshPage() {
+        console.log()
+        window.location.reload()
     }
 
     refreshPage(){
@@ -40,11 +45,12 @@ class SubmitButton extends Component {
 
     render() {
         const { classes } = this.props;
+
         return (
             <div>
                 <Button
                     className={classes.button}
-                    onClick={this.switchStateToCompleted}
+                    onClick= {this.switchStateToCompleted} 
                     disableRipple
                     size="large"
                     variant="contained"
@@ -52,7 +58,7 @@ class SubmitButton extends Component {
                     Submit
                 </Button>
 
-                {this.state.type == "Successful" ? <div>Successfully Submitted!</div> : null}
+                {this.state.type == "Successful" ? <div> Submission Successful! </div> : null}
 
             </div>
 
