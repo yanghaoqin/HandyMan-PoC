@@ -19,7 +19,8 @@ const App = () => {
       <Route path="/about"  component={TestComponent}/>
       <Route path="/jobPosting" component={JobPosting}/>
       <Route path="/handymen" component={HandyManList} />
-      
+      <Route path="/registration" component={Registration} />
+
     </div>
   </Router>
   )
