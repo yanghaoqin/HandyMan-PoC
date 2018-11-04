@@ -5,11 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^3.3.2",
     "@material-ui/icons": "^3.0.1",
-<<<<<<< HEAD
-    "@material/textfield": "^0.41.0",
-=======
     "clarifai": "^2.9.0",
->>>>>>> a7a313888534054c726cbcba80116d0743fafab1
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-router": "^4.3.1",
