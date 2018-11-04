@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import SubmitButton from './SubmitButton';
-
+import PropTypes from "prop-types"
+import classNames from "classnames"
+import IconButton from '@material-ui/core/IconButton';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import FormControl from '@material-ui/core/FormControl';
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 const styles = theme => ({
     container: {
@@ -11,60 +17,108 @@ const styles = theme => ({
         flexWrap: 'wrap',
     },
     textField: {
-        marginLeft: theme.spacing.unit,
-        marginRight: theme.spacing.unit,
-        width: 200,
-    },
+        padding: "15px",
+        margin: "5px"
+    }
 });
 
-class TextFields extends React.Component {
+class HandymanRegistration extends React.Component {
+    state = {
+        showPassword: false,
+        showConfirmPassword: false
+    };
+
+    handleChange = prop => event => {
+        this.setState({ [prop]: event.target.value });
+    };
+
+    handleClickShowPassword = () => {
+        this.setState(state => ({showPassword: !state.showPassword }));
+    };
+
+    handleClickShowConfirmPass = () => {
+        this.setState(state => ({showConfirmPassword : !state.showConfirmPassword}))
+    }
     render() {
         const { classes } = this.props;
-
         return (
-            <div>
-            <div className={classes.container} noValidate autoComplete="off">
+            <div>      
                 <TextField
-                    required
-                    id="standard-name"
-                    label="Name"
+                    id="user-email"
+                    label="Email"
                     className={classes.textField}
-                    margin="normal"
                 />
-                <TextField
-                    required
-                    id="handyman-password"
-                    label="Password"
-                    className={classes.textField}
-                    margin="normal"
-                />
-                <TextField
-                    required
-                    id="handyman-password"
-                    label="Confirm Password"
-                    className={classes.textField}
-                    margin="normal"
-                />
-                <TextField
-                    id="expertise"
-                    label="What's your expertise?"
-                    className={classes.textField}
-                    margin="normal"
-                />
+                <br/>                
+
+               <FormControl className={classNames(classes.margin, classes.textField)}>
+                    <InputLabel htmlFor="password">Password</InputLabel>
+                    <Input
+                        id="password"
+                        type={this.state.showPassword ? 'text' : 'password'}
+                        value={this.state.password}
+                        onChange={this.handleChange('password')}
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    aria-label="Toggle password visibility"
+                                    onClick={this.handleClickShowPassword}
+                                >
+                                    {this.state.showPassword ? <Visibility /> : <VisibilityOff />}
+                                </IconButton>
+                            </InputAdornment>
+                        }
+                    />
+                </FormControl>
+                <br/>
+
+                <FormControl className={classNames(classes.margin, classes.textField)}>
+                    <InputLabel htmlFor="confirm-password">ConfirmPassword</InputLabel>
+                    <Input
+                        id="confirm-password"
+                        type={this.state.showConfirmPassword ? 'text' : 'password'}
+                        value={this.state.confirmpassword}
+                        onChange={this.handleChange('confirm-password')}
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    aria-label="Toggle password visibility"
+                                    onClick={this.handleClickShowConfirmPassword}
+                                >
+                                    {this.state.showConfirmPassword ? <Visibility /> : <VisibilityOff />}
+                                </IconButton>
+                            </InputAdornment>
+                        }
+                    />
+                </FormControl>
+                <br/>
+
                 <TextField
                     id="phone-number"
-                    label="Phone Number"
+                    label="Your Phone Number"
                     className={classes.textField}
-                    margin="normal"
                 />
-             </div>
-             <SubmitButton />
-             </div>
-        );
+                <br/>
+
+                <TextField
+                    id="address"
+                    label="Your Address"
+                    className={classes.textField}
+                />
+                <br/>
+
+                <TextField
+                    id="expertise"
+                    label="Service Offered"
+                    className={classes.textField}
+                />
+                <br/>
+
+            </div>
+
+        )
     }
 }
-
-TextFields.propTypes = {
+HandymanRegistration.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
