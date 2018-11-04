@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import PropTypes from "prop-types"
 import classNames from "classnames"
 import IconButton from '@material-ui/core/IconButton';
 import Input from '@material-ui/core/Input';
@@ -10,6 +9,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import TextField from '@material-ui/icons/TextField';
 
 const styles = theme => ({
     container: {
@@ -123,8 +123,8 @@ class CustomerRegistration extends React.Component {
     }
 }
 
-TextFields.propTypes = {
+CustomerRegistration.propTypes = {
     classes: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(TextFields); 
+export default withStyles(styles)(CustomerRegistration); 
