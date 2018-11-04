@@ -53,8 +53,8 @@ class RegistrationForm extends Component {
 
                 {this.state.type == "Customer" ? <div> <CustomerRegistration /> <SubmitButton /> </div> : null}
                 {this.state.type == "Handyman" ? <div> <HandymanRegistration /> <SubmitButton /> </div> : null}
-
-                
+            
+            
             </div>
         );
     }

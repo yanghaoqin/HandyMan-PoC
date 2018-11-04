@@ -14,23 +14,34 @@ const styles = theme => ({
     },
 });
 
-class SubmitButton extends Component{
+class SubmitButton extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            type: ""
+            type: "",
+            on: false,
         }
         this.switchStateToCompleted = this.switchStateToCompleted.bind(this)
     }
 
     switchStateToCompleted() {
+        setTimeout(
+            function(){
+            this.refreshPage()
+            }.bind(this), 1000
+        )
         this.setState({ type: "Successful" })
     }
-    
-    render(){
+
+    refreshPage(){
+        console.log()
+        window.location.reload()
+    }
+
+    render() {
         const { classes } = this.props;
-        return(
-        <div>
+        return (
+            <div>
                 <Button
                     className={classes.button}
                     onClick={this.switchStateToCompleted}
@@ -43,7 +54,7 @@ class SubmitButton extends Component{
 
                 {this.state.type == "Successful" ? <div>Successfully Submitted!</div> : null}
 
-        </div>  
+            </div>
 
         );
     }
