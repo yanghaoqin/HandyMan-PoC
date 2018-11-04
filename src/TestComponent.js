@@ -4,7 +4,7 @@ class TestComponent extends Component {
     render() { 
         return (
             <div>
-                test component
+                Hello
             </div>
         )
     }

@@ -1,61 +1,69 @@
-import TextField from "@material-ui/core/TextField"
-import React, { Component } from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import PropTypes from "prop-types"
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+
 
 const styles = theme => ({
+    container: {
+        display: 'flex',
+        flexWrap: 'wrap',
+    },
     textField: {
-        padding: "10px",
-        margin: "5px"
-    }
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: 200,
+    },
 });
 
-function HandymanRegistration(props) {
-    const { classes } = props
-    return (
-        <div>
-            <TextField
-                id="user-email"
-                label="Email"
-                className={classes.textField}
-            />
+class TextFields extends React.Component {
+    render() {
+        const { classes } = this.props;
 
-            <TextField
-                id="password"
-                label="Password"
-                className={classes.textField}
-            />
-
-            <TextField
-                id="confirm-password"
-                label="Confirm the Password"
-                className={classes.textField}
-            />
-
-            <TextField
-                id="phone-number"
-                label="Your Phone Number"
-                className={classes.textField}
-            />
-
-            <TextField
-                id="address"
-                label="Your Address"
-                className={classes.textField}
-            />
-
-            <TextField
-                id="expertise"
-                label="Service Offered"
-                className={classes.textField}
-            />
-        </div>
-
-    )
+        return (
+            <form className={classes.container} noValidate autoComplete="off">
+                <TextField
+                    required
+                    id="standard-name"
+                    label="Name"
+                    className={classes.textField}
+                    margin="normal"
+                />
+                <TextField
+                    required
+                    id="handyman-password"
+                    label="Password"
+                    className={classes.textField}
+                    margin="normal"
+                />
+                <TextField
+                    required
+                    id="handyman-password"
+                    label="Confirm Password"
+                    className={classes.textField}
+                    margin="normal"
+                />
+                <TextField
+                    id="expertise"
+                    label="What's your expertise?"
+                    className={classes.textField}
+                    margin="normal"
+                />
+                <TextField
+                    id="phone-number"
+                    label="Phone Number"
+                    className={classes.textField}
+                    margin="normal"
+                />
+            </form>
+        );
+    }
 }
 
-HandymanRegistration.propTypes = {
+TextFields.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(HandymanRegistration)
+export default withStyles(styles)(TextFields); 
