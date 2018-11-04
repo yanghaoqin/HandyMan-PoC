@@ -17,8 +17,9 @@ const styles = theme => ({
         flexWrap: 'wrap',
     },
     textField: {
-        padding: "15px",
-        margin: "5px"
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        marginTop: 3 * theme.spacing.unit
     }
 });
 
