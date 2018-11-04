@@ -44,8 +44,8 @@ class RegistrationForm extends Component {
                     variant="contained"
                     color="primary" >
                     Handyman
-      </Button>
-
+                </Button>
+    
                 <Button
                     className={classes.button}
                     onClick={this.switchStateToCustomer}
@@ -54,7 +54,7 @@ class RegistrationForm extends Component {
                     variant="contained"
                     color="primary" >
                     Customer
-      </Button>
+                </Button>
 
                 {this.state.type == "Customer" ? <CustomerRegistration /> : null}
                 {this.state.type == "Handyman" ? <HandymanRegistration /> : null}

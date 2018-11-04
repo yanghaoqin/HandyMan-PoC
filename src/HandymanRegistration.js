@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import SubmitButton from './SubmitButton';
 
 
 const styles = theme => ({
@@ -23,7 +22,8 @@ class TextFields extends React.Component {
         const { classes } = this.props;
 
         return (
-            <form className={classes.container} noValidate autoComplete="off">
+            <div>
+            <div className={classes.container} noValidate autoComplete="off">
                 <TextField
                     required
                     id="standard-name"
@@ -57,7 +57,9 @@ class TextFields extends React.Component {
                     className={classes.textField}
                     margin="normal"
                 />
-            </form>
+             </div>
+             <SubmitButton />
+             </div>
         );
     }
 }
