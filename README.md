@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br/>
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br/><br/>
 HandyMan is a website that connects clients with professionals that provide services. Clients are able to apply filters to select the HandyMan they need. Our newest features include integration of the Clarifai visual recognition API that allows clients to upload images, and the website would then show what possible professionals the client would likely need.
 
 ## Available Scripts
